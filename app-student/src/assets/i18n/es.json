@@ -1,0 +1,15 @@
+{
+  "USER": "Usuario",
+  "TITLE": "Iniciar Sesión",
+  "LOGOUT": "Salir",
+  "SUBJECTS": "Materias",
+  "ADVISOR": "Asesor",
+  "ADVISORS": "Asesores",
+  "CREATE": "Nuevo",
+  "LOADING": "Cargando...",
+  "ACTIONS": "Acciones",
+  "EDIT": "Editar",
+  "DELETE": "Eliminar",
+  "EMPTY": "Selecciona una opción"
+}
+

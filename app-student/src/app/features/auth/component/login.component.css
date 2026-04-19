@@ -1,0 +1,78 @@
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0f2a3d;
+}
+/* CAJA */
+.login-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px; /* 🔥 más aire */
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* IDIOMA */
+.lang-switch {
+  display: flex;
+  justify-content: flex-end; /* 🔥 alineado arriba derecha */
+  gap: 6px;
+}
+
+.lang-switch button {
+  background: #1abc9c;
+  padding: 5px 8px;
+  font-size: 12px;
+  border-radius: 6px;
+}
+
+/* TITULO */
+h2 {
+  text-align: center;
+  color: #0f2a3d;
+  margin: 0;
+}
+
+/* INPUT GROUP */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* INPUT */
+input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* BOTON LOGIN */
+.btn-login {
+  background: #1abc9c;
+  border: none;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  margin: 0; /* 🔥 quitamos margin-left */
+  transition: 0.2s;
+}
+
+.btn-login:hover {
+  background: #16a085;
+  transform: scale(1.02);
+}
+
+/* ERROR */
+.error {
+  color: red;
+  text-align: center;
+  font-size: 13px;
+}

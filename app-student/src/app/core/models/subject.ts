@@ -1,0 +1,6 @@
+// src/app/models/subject.model.ts
+export interface Subject {
+  id?: number;
+  name: string;
+  description?: string;
+}

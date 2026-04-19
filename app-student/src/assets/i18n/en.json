@@ -1,0 +1,14 @@
+{
+  "USER": "User",
+  "TITLE": "Login",
+  "LOGOUT": "Logout",
+  "SUBJECTS": "Subjects",
+  "ADVISOR": "Advisor",
+  "ADVISORS": "Advisors",
+  "CREATE": "New",
+  "LOADING": "Loading...",
+  "ACTIONS": "Actions",
+  "EDIT": "Edit",
+  "DELETE": "Delete",
+  "EMPTY": "Select an option"
+}
