@@ -1,0 +1,111 @@
+<div class="dashboard-container">
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="welcome">
+      👋 {{ 'USER' | translate }}: <b>{{ username }}</b>
+    </div>
+
+    <div class="nav-actions">
+      <button (click)="changeLang('es')">ES</button>
+      <button (click)="changeLang('en')">EN</button>
+      <button (click)="logout()">{{ 'LOGOUT' | translate }}</button>
+    </div>
+  </div>
+
+  <!-- CARDS -->
+  <div class="cards">
+
+    @if (role === 'ROLE_ADMIN') {
+      <div class="card" (click)="load('students')">👤 {{ 'USER' | translate }}</div>
+      <div class="card" (click)="load('subjects')">📘 {{ 'SUBJECTS' | translate }}</div>
+      <div class="card" (click)="load('advisors')">🧑‍🏫 {{ 'ADVISORS' | translate }}</div>
+    }
+
+    @if (role === 'ROLE_ADVISOR') {
+      <div class="card" (click)="load('students')">👤 {{ 'USER' | translate }}</div>
+      <div class="card" (click)="load('subjects')">📘 {{ 'SUBJECTS' | translate }}</div>
+    }
+
+    @if (role === 'ROLE_STUDENT') {
+      <div class="card" (click)="load('subjects')">📘 {{ 'SUBJECTS' | translate }}</div>
+      <div class="card" (click)="load('advisors')">🧑‍🏫 {{ 'ADVISOR' | translate }}</div>
+    }
+
+  </div>
+
+  <!-- ACTIONS -->
+  @if (role !== 'ROLE_STUDENT' && lastType) {
+    <div class="actions">
+      <button (click)="openCreate()">➕ {{ 'CREATE' | translate }}</button>
+    </div>
+  }
+
+  <!-- LOADING -->
+  @if (loading) {
+    <div class="loading">{{ 'LOADING' | translate }}</div>
+  }
+
+  <!-- TABLE -->
+  @if (data.length) {
+    <div class="table-container">
+      <table>
+        <thead>
+        <tr>
+          <th *ngFor="let col of columns">{{ col }}</th>
+          <th>{{ 'ACTIONS' | translate }}</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let item of data">
+          <td *ngFor="let col of columns">{{ item[col] }}</td>
+          <td>
+            <button class="edit" (click)="openEdit(item)">✏️</button>
+            <button class="delete" (click)="delete(item)">🗑</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  }
+
+  <!-- EMPTY -->
+  @if (!data.length && !loading) {
+    <div class="empty">{{ 'EMPTY' | translate }}</div>
+  }
+
+  <!-- 🔥 MODAL -->
+  @if (showModal) {
+    <div class="modal-backdrop" (click)="showModal=false">
+      <div class="modal" (click)="$event.stopPropagation()">
+
+        <div class="modal-header">
+          <h3>{{ isEdit ? ('EDIT' | translate) : ('CREATE' | translate) }}</h3>
+          <button class="close" (click)="showModal=false">✖</button>
+        </div>
+
+        <div class="modal-body">
+
+          <input [(ngModel)]="formData.name" placeholder="Name" />
+
+          @if (lastType !== 'subjects') {
+            <input [(ngModel)]="formData.email" placeholder="Email" />
+          }
+
+          @if (lastType === 'students') {
+            <input [(ngModel)]="formData.age" type="number" placeholder="Age" />
+          }
+
+        </div>
+
+        <div class="modal-footer">
+          <button class="save" (click)="save()">💾</button>
+          <button class="cancel" (click)="showModal=false">❌</button>
+        </div>
+
+      </div>
+    </div>
+  }
+
+</div>
