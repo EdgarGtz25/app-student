@@ -1,4 +1,4 @@
-Frontend - App Student (Angular)
+ Frontend - App Student (Angular)
 📌 Descripción
 
 Aplicación frontend desarrollada en Angular para la gestión de:
@@ -41,16 +41,26 @@ ng serve
 
 Abrir en navegador:
 
-http://localhost:4200
-🔗 Configuración del Backend
+👉 http://localhost:4200
+
+🔗 Backend
 
 El frontend consume el backend en:
 
-http://localhost:8080
-⚠️ IMPORTANTE
+👉 http://localhost:8080
 
-Asegúrate de tener el backend corriendo antes de iniciar el frontend.
+⚠️ Asegúrate de que el backend esté corriendo.
 
 🔐 Login de prueba
 Usuario: admin
 Password: 123456
+🌍 Internacionalización (i18n)
+
+Ubicación:
+
+src/assets/i18n/
+
+Idiomas soportados:
+
+🇲🇽 Español (es.json)
+🇺🇸 Inglés (en.json)
